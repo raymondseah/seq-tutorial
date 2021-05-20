@@ -8,9 +8,11 @@ module.exports = (sequelize, DataTypes) => {
 
   Post.associate = (models) => {
     Post.belongsTo(models.User, {
+      onDelete: "cascade",
       foreignKey: {
         allowNull: false,
       },
+      hooks: true,
     });
   };
 

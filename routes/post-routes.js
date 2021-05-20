@@ -16,4 +16,5 @@ router.get("/find/:id", (req, res) => {
   }).then((allPosts) => res.send(allPosts));
 });
 
+
 module.exports = router;

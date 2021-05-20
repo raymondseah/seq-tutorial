@@ -14,4 +14,15 @@ router.get("/all", (req, res) => {
   }).then((allUsers) => res.send(allUsers));
 });
 
+router.delete("/find/:id", (req, res) => {
+  db.User.destroy({
+    where: { id: req.params.id },
+  }).then((result) =>
+    res.status(403).json({
+      'success': true,
+      'result': result,
+    })
+  );
+});
+
 module.exports = router;

@@ -8,12 +8,8 @@ module.exports = (sequelize, DataTypes) => {
 
   //when user is deleted, post and profile will delete as well.
   User.associate = (models) => {
-    User.hasMany(models.Post, {
-      onDelete: "cascade",
-    });
-    User.hasOne(models.Profile, {
-      onDelete: "cascade",
-    });
+    User.hasMany(models.Post, { onDelete: "cascade"});
+    User.hasOne(models.Profile, { onDelete: "cascade"});
   };
   // put together on top or the second will assocaite will overwrite the first
 
